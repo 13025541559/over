@@ -1,0 +1,112 @@
+<%-include('../public/header')%>
+<%-include('../public/aside')%>
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="page-header">
+                    你当前所在的页面 <small>供应商管理页面</small>
+                </h3>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Advanced Tables
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <div id="dataTables-example_filter" class="dataTables_filter">
+                                <label>
+                                    供应商名称：
+                                    <input type="search" class="form-inline input-sm" aria-controls="dataTables-example" id="queryUserName2">
+                                </label>
+                                <button class="btn btn-success" id="queryBtn2">查询</button>
+                                <a href="/provider/add.html" class="btn btn-primary pull-right" >添加供应商</a>
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>供应商编码</th>
+                                    <th>供应商名称</th>
+                                    <th>联系人</th>
+                                    <th>联系电话</th>
+                                    <th>传真</th>
+                                    <th>创建时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <%for(let provider of providerlist){%>
+                                <tr>
+                                    <td><%=provider.proCode%></td>
+                                    <td><%=provider.proName%></td>
+                                    <td><%=provider.proContact%></td>
+                                    <td><%=provider.proPhone%></td>
+                                    <td><%=provider.proFax%></td>
+                                    <td><%=provider.creationDate%></td>
+                                    <td>
+                                        <a href="/provider/view/<%=provider._id%>.html"><img src="/images/read.png" alt="查看" title="查看"/></a>
+                                        <a href="/provider/update/<%=provider._id%>.html"><img src="/images/xiugai.png" alt="修改" title="修改"/></a>
+                                        <a href="/provider/remove/<%=provider._id%>" class="removeUser"><img src="/images/schu.png" alt="删除" title="删除"/></a>
+                                    </td>
+                                </tr>
+                                <%}%>
+                                </tbody>
+                            </table>
+                            <div class="page-bar" id="getm2" max="<%=totalPageCount%>">
+                                <div class="col-sm-8">
+                                    <ul class="page-num-ul clearfix">
+                                        <li>共 <%=totalCount%> 条记录&nbsp;&nbsp; <%=pageNo%>/<%=totalPageCount%>页</li>
+                                        <% if(pageNo>1){%>
+                                        <a href="/provider/list.html?pageNo=1">首页</a>
+                                        <a href="/provider/list.html?pageNo=<%=+pageNo-1%>">上一页</a>
+                                        <%}%>
+                                        <% if(pageNo<totalPageCount){%>
+                                        <a href="/provider/list.html?pageNo=<%=+pageNo+1%>">下一页</a>
+                                        <a href="/provider/list.html?pageNo=<%=totalPageCount%>">最后一页</a>
+                                        <%}%>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                        <span class="page-go-form"><label>跳转至</label>
+	                                    <input type="text" name="inputPage" id="inputPage2" class="page-key" />页
+	                                    <button class="btn btn-primary btn-sm" id="tz2">跳转</button>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Advanced Tables -->
+            </div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. ROW  -->
+</div>
+<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates - Collect from </p></footer>
+</div>
+
+<%-include('../public/footer')%>
+<script>
+    $(function () {
+        $('#queryBtn2').click(function () {
+            let proName = $('#queryUserName2').val()
+            window.location.href='/provider/list.html?pageNo=1&proName='+proName;
+            // window.location.href='https:/www.baidu.com';
+        })
+        $("#tz2").click(function () {
+            let a = $("#inputPage2").val();
+            let b = $("#getm2").attr("max");
+            a = (a>0?a:1);
+            a = (a>b?b:a);
+            window.location.href='/provider/list.html?pageNo='+a;
+        })
+    })
+
+</script>

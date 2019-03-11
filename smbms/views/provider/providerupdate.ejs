@@ -1,0 +1,76 @@
+<%-include('../public/header')%>
+<%-include('../public/aside')%>
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="page-header">
+                    你当前所在的页面 <small>用户信息修改页面</small>
+                </h3>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            个人信息
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form id="userForm" name="userForm" method="post"  action="/provider/updated">
+                                        <input type="hidden" name="_id" value="<%=provider._id%>">
+                                        <div class="form-group">
+                                            <label>供应商编码：</label>
+                                            <input class="form-control" name="proCode" value="<%=provider.proCode%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>供应商名称：</label>
+                                            <input class="form-control" name="proName" value="<%=provider.proName%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>联系人：</label>
+                                            <input class="form-control" name="proContact" value="<%=provider.proContact%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>联系电话：</label>
+                                            <input class="form-control" name="proPhone" value="<%=provider.proPhone%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>联系地址：</label>
+                                            <input class="form-control" name="proAddress" value="<%=provider.proAddress%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>传真：</label>
+                                            <input class="form-control" name="proFax" value="<%=provider.proFax%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>描述：</label>
+                                            <input class="form-control" name="proDesc" value="<%=provider.userName%>">
+                                        </div>
+                                        <button type="submit" class="btn btn-default" id="save">保存</button>
+                                        <a href="/provider/list.html" type="reset" class="btn btn-default" id="back" name="back">返回</a>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            <!-- /. ROW  -->
+        </div>
+        <!-- /. ROW  -->
+    </div>
+    <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates - Collect from </p></footer>
+</div>
+
+<%-include('../public/footer')%>
+
+

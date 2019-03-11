@@ -1,0 +1,63 @@
+<%-include('../public/header')%>
+<%-include('../public/aside')%>
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="page-header">
+                    你当前所在的页面 <small>个人信息显示页面</small>
+                </h3>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <!-- Advanced Tables -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        个人信息
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">
+                                <p><strong>用户编号：</strong><span><%=user.userCode%></span></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p><strong>用户名称：</strong><span><%=user.userName%></span></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p><strong>用户性别：</strong><span><%=user.gender==1?"女":"男"%></span></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p><strong>出生日期：</strong><span><%=user.birthday%></span></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p><strong>用户电话：</strong><span><%=user.phone%></span></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p><strong>用户地址：</strong><span><%=user.address%></span></p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <p><strong>用户类别：</strong><span><%=user.userRole===1?'系统管理员':user.userRole===2?'经理':'普通员工'%></span></p>
+                            </a>
+                        </div>
+                        <div class="text-right">
+                            <a href="/user/list.html" class="btn btn-primary">返回</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--End Advanced Tables -->
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. ROW  -->
+</div>
+<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates - Collect from </p></footer>
+</div>
+
+<%-include('../public/footer')%>

@@ -1,0 +1,85 @@
+<%-include('../public/header')%>
+<%-include('../public/aside')%>
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="page-header">
+                    你当前所在的页面 <small>用户信息修改页面</small>
+                </h3>
+            </div>
+        </div>
+        <!-- /. ROW  -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            个人信息
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form id="userForm" name="userForm" method="post" enctype="multipart/form-data" action="/user/updated">
+                                        <input type="hidden" name="_id" value="<%=user._id%>">
+                                        <div class="form-group">
+                                            <label>用户名称：</label>
+                                            <input class="form-control" name="userName" value="<%=user.userName%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label >用户性别：</label>
+                                            <select class="form-control" name="gender">
+                                                <option value="1" <%=user.gender==2?'selected=selected':''%>>男</option>
+                                                <option value="2" <%=user.gender==1?'selected=selected':''%>>女</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="data">出生日期：</label>
+                                            <input type="text" Class="Wdate" id="birthday" name="birthday" value="<%=user.birthday%>"
+                                                   readonly="readonly" onclick="WdatePicker();">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>用户电话</label>
+                                            <input class="form-control" name="phone" value="<%=user.phone%>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>用户地址</label>
+                                            <input class="form-control" name="address" value="<%=user.address%>">
+                                        </div>
+                                        <div>
+                                            <label for="pic">靓照：</label>
+                                            <input type="file" name="pic" id="pic" value="<%=user.idPicPath%>">
+                                            <img src="/<%=user.idPicPath%>" width="100" alt="">
+                                        </div>
+                                        <div>
+                                            <label >用户角色：</label>
+                                            <!-- 列出所有的角色分类 -->
+                                            <input type="hidden" value="<%=user.userRole%>" id="rid" />
+                                            <select name="userRole" id="userRole" class="form-control"></select>
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-default" id="save">保存</button>
+                                        <button type="reset" class="btn btn-default" id="back" name="back">返回</button>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                <!--End Advanced Tables -->
+            </div>
+        </div>
+        <!-- /. ROW  -->
+    </div>
+    <!-- /. ROW  -->
+</div>
+<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates - Collect from </p></footer>
+</div>
+
+<%-include('../public/footer')%>
+<script src="/js/usermodify.js"></script>
+
+

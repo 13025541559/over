@@ -1,0 +1,115 @@
+<%-include('../public/header')%>
+    <%-include('../public/aside')%>
+    <div id="page-wrapper" >
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="page-header">
+                        你当前所在的页面 <small>用户管理页面</small>
+                    </h3>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Advanced Tables
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                    <div id="dataTables-example_filter" class="dataTables_filter">
+                                        <label>
+                                            用户名：
+                                            <input type="search" class="form-inline input-sm" aria-controls="dataTables-example" id="queryUserName">
+                                        </label>
+                                        <button class="btn btn-success" id="queryBtn">查询</button>
+                                        <a href="/user/add.html" class="btn btn-primary pull-right" >添加用户</a>
+                                    </div>
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                    <tr>
+                                        <th>用户编码</th>
+                                        <th>用户名称</th>
+                                        <th>性别</th>
+                                        <th>年龄</th>
+                                        <th>电话</th>
+                                        <th>用户类型</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <%for(let user of userlist){%>
+                                    <tr>
+                                        <td><%=user.userCode%></td>
+                                        <td><%=user.userName%></td>
+                                        <td><%=user.gender===1?'女':'男'%></td>
+                                        <td><%=new Date().getFullYear()-new Date(user.birthday).getFullYear()%></td>
+                                        <td><%=user.phone%></td>
+                                        <td><%=user.userRole==1?'系统管理员':user.userRole==2?'经理':'普通员工'%></td>
+                                        <td>
+                                            <a href="/user/view/<%=user._id%>.html"><img src="/images/read.png" alt="查看" title="查看"/></a>
+                                            <a href="/user/update/<%=user._id%>.html"><img src="/images/xiugai.png" alt="修改" title="修改"/></a>
+                                            <a href="/user/remove/<%=user._id%>" class="removeUser"><img src="/images/schu.png" alt="删除" title="删除"/></a>
+                                        </td>
+                                    </tr>
+                                    <%}%>
+                                    </tbody>
+                                </table>
+                                <div class="page-bar" id="getm" max="<%=totalPageCount%>">
+                                    <div class="col-sm-8">
+                                        <ul class="page-num-ul clearfix">
+                                            <li>共 <%=totalCount%> 条记录&nbsp;&nbsp; <%=pageNo%>/<%=totalPageCount%>页</li>
+                                            <% if(pageNo>1){%>
+                                            <a href="/user/list.html?pageNo=1">首页</a>
+                                            <a href="/user/list.html?pageNo=<%=+pageNo-1%>">上一页</a>
+                                            <%}%>
+                                            <% if(pageNo<totalPageCount){%>
+                                            <a href="/user/list.html?pageNo=<%=+pageNo+1%>">下一页</a>
+                                            <a href="/user/list.html?pageNo=<%=totalPageCount%>">最后一页</a>
+                                            <%}%>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <span class="page-go-form"><label>跳转至</label>
+	                                    <input type="text" name="inputPage" id="inputPage" class="page-key" />页
+	                                    <button class="btn btn-primary btn-sm" id="tz">跳转</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            </div>
+            <!-- /. ROW  -->
+        </div>
+        <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates - Collect from </p></footer>
+    </div>
+
+<%-include('../public/footer')%>
+<script>
+    $(function () {
+        $('#queryBtn').click(function () {
+            let userName = $('#queryUserName').val()
+            console.log(userName)
+            window.location.href='/user/list.html?pageNo=1&userName='+userName;
+        })
+        $("#tz").click(function () {
+            let a = $("#inputPage").val();
+            let b = $("#getm").attr("max");
+            console.log(a);
+            console.log(b);
+            a = (a>b?b:a);
+            a = (a<0?1:a);
+            window.location.href='/user/list.html?pageNo='+a;
+        })
+    })
+
+</script>
+
