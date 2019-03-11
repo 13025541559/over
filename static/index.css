@@ -1,0 +1,95 @@
+@media screen and (min-width: 320px) {
+  html,button,.search_t{font-size: 12px;}
+  .proName { font-size: 32px;}
+  .headerAll,.list-hot-title,div.doLoginH{font-size: 15px;}
+  .tab_header .login,.header .header_center,.songList_header{font-size: 14px;}
+  .musicListPlay ul li span:nth-of-type(3),.musicListPlay ul li span:nth-of-type(4) {font-size: 10px;}
+  .hotMusicPage_list ul li span:nth-of-type(3),.hotMusicPage_list ul li span:nth-of-type(4) {font-size: 10px;}
+  li .yj,li.bannerLi {width: 12px;height: 12px}
+  span.rankNum{font-size: 14px;}
+  span.singerName{font-size: 8px;}
+  span.singerDName,span.albumName{font-size: 18px}
+}
+@media screen and (min-width: 360px) {
+  html,button,.search_t{font-size: 14px;}
+  .proName { font-size: 34px;}
+  .homePage{background-image: radial-gradient(circle 160px at 50% 50%,#20344e, #07133B);}
+  .headerAll,.list-hot-title,div.doLoginH{font-size: 17px;}
+  .tab_header .login,.header .header_center,.songList_header{font-size: 16px;}
+  .musicListPlay ul li span:nth-of-type(3),.musicListPlay ul li span:nth-of-type(4) {font-size: 12px;}
+  .hotMusicPage_list ul li span:nth-of-type(3),.hotMusicPage_list ul li span:nth-of-type(4) {font-size: 12px;}
+  li .yj,li.bannerLi {width: 14px;height: 14px}
+  span.rankNum{font-size: 16px;}
+  span.singerName{font-size: 10px;}
+  span.singerDName,span.albumName{font-size: 20px}
+}
+@media screen and (min-width: 400px) {
+  html,button,.search_t {font-size: 16px;}
+  .proName { font-size: 36px;}
+  .headerAll,.list-hot-title,div.doLoginH{font-size: 19px;}
+  .tab_header .login,.header .header_center,.songList_header{font-size: 18px;}
+  .musicListPlay ul li span:nth-of-type(3),.musicListPlay ul li span:nth-of-type(4) {font-size: 14px;}
+  .hotMusicPage_list ul li span:nth-of-type(3),.hotMusicPage_list ul li span:nth-of-type(4) {font-size: 14px;}
+  li .yj,li.bannerLi {width: 16px;height: 16px}
+  span.rankNum{font-size: 18px;}
+  span.singerName{font-size: 12px;}
+  span.singerDName,span.albumName{font-size: 22px}
+}
+@media screen and (min-width: 480px) {
+  html,button,.search_t{font-size: 20px;}
+  .proName { font-size: 38px;}
+  .headerAll,.list-hot-title,div.doLoginH{font-size: 23px;}
+  .tab_header .login,.header .header_center,.songList_header{font-size: 22px;}
+  .musicListPlay ul li span:nth-of-type(3),.musicListPlay ul li span:nth-of-type(4) {font-size: 18px;}
+  .hotMusicPage_list ul li span:nth-of-type(3),.hotMusicPage_list ul li span:nth-of-type(4) {font-size: 18px;}
+  li .yj,li.bannerLi {width: 20px;height: 20px}
+  span.rankNum{font-size: 22px;}
+  span.singerName{font-size: 16px;}
+  span.singerDName,span.albumName{font-size: 26px}
+}
+@media screen and (min-width: 640px) {
+  html,button,.search_t{font-size: 26px;}
+  .proName { font-size: 56px;}
+  .homePage{background-image: radial-gradient(circle 250px at 50% 50%,#20344e, #07133B);}
+  .headerAll,.list-hot-title,div.doLoginH{font-size: 29px;}
+  .tab_header .login,.header .header_center,.songList_header{font-size: 28px;}
+  .musicListPlay ul li span:nth-of-type(3),.musicListPlay ul li span:nth-of-type(4) {font-size: 20px;}
+  .hotMusicPage_list ul li span:nth-of-type(3),.hotMusicPage_list ul li span:nth-of-type(4) {font-size: 20px;}
+  li .yj,li.bannerLi {width: 24px;height: 24px}
+  span.rankNum{font-size: 28px;}
+  span.singerName{font-size: 22px;}
+  span.singerDName,span.albumName{font-size: 32px}
+}
+@media screen and (min-width: 1024px) {
+  html,button,.search_t{font-size: 30px;}
+  .proName { font-size: 72px;}
+  .homePage{background-image: radial-gradient(circle 304px at 50% 50%,#20344e, #07133B);}
+  .headerAll,.list-hot-title,div.doLoginH{font-size: 33px;}
+  .tab_header .login,.header .header_center,.songList_header{font-size: 32px;}
+  .musicListPlay ul li span:nth-of-type(3),.musicListPlay ul li span:nth-of-type(4) {font-size: 24px;}
+  .hotMusicPage_list ul li span:nth-of-type(3),.hotMusicPage_list ul li span:nth-of-type(4) {font-size: 24px;}
+  li .yj,li.bannerLi{width: 26px;height: 26px}
+  span.rankNum{font-size: 32px;}
+  span.singerName{font-size: 26px;}
+  span.singerDName,span.albumName{font-size: 36px}
+}
+html,body,ul,ol,li,h1,h2,h3,h4,h5{
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+  color: #ffffff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  background-color: #07133B;
+}
+ul{
+  list-style:none;
+}
+.clearfix:after{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}

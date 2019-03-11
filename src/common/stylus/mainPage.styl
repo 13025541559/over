@@ -1,0 +1,145 @@
+.mainPage
+  .headerAll
+    box-sizing: border-box
+    width: 100%
+    padding: 2% 2%
+    background-image: linear-gradient(to bottom, #2a279f, #15285e,#2a279f)
+    ul
+      display: flex
+      justify-content:center
+      li
+        ul
+          li
+            margin-left: 5%
+        img
+          margin-top: 2px
+          width: 60%
+      li.manager
+        flex: 1
+      li.music
+        flex: 7
+        ul
+          li
+            line-height: 31px
+      li.search
+        flex: 1
+        img
+          margin-top: 3px
+          float: right
+  .tab
+    .tabb
+      width: 70%;
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 999;
+      .tab_left
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to left, #132245, #222272);
+        float: left;
+        .tab_header
+          box-sizing: border-box;
+          margin: 0 10%;
+          padding: 10% 0;
+          width: 80%;
+          text-align: center;
+          border-bottom: 1px solid #4c4c98;
+          img
+            width: 40%;
+            border-radius: 50%;
+          a
+            color: #fff
+        .tab_bottom
+          height: 100%;
+          width: 100%;
+          ul
+            li
+              margin: 10% 0 10% 10%;
+              img
+                width: 10%;
+                margin-top: -3px;
+                margin-right: 5px;
+                vertical-align: middle;
+          .tab_exit
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            padding: 5%;
+    .tab_right
+      height: 100%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(7,19,59,.8);
+      float: left;
+      z-index: 2;
+      visibility: hidden;
+
+  .doLogin
+    width:60%;
+    position:fixed;
+    top: 32%;
+    background-image: linear-gradient(to right, #132245, #222272)
+    padding: 5% 4% 3% 4%;
+    margin-left:20%;
+    z-index:1000;
+    visibility:hidden
+    div.doLoginH
+      text-align center
+      margin-top 0;
+      span
+        display inline-block
+        width 45%
+      span:nth-of-type(1)
+        border-right 1px solid #4c4c98
+    div
+      margin:6% 0;
+      span
+        width:10%;
+      input
+        width:77%;
+        padding:3% 0;
+        outline:none;
+        border:none;
+    div.loginButton
+      display block
+    div.registerButton
+      display none
+    div
+      span.errV
+        margin-left 50%
+        color red
+        visibility hidden
+      a
+        color:#fff;
+      button
+        padding:2% 8%;
+        margin-top:1%;
+        float:right;
+        color #fff;
+        background-color: #081848;
+        outline:none;
+        border:none;
+      button:nth-of-type(2)
+        margin-right:2%;
+  .success
+    text-align center
+    width:40%;
+    position:fixed;
+    top: 40%;
+    background-color #222272
+    padding: 5% 4% 3% 4%;
+    margin-left:30%;
+    z-index:1001;
+    visibility:hidden
+    button
+      padding:2% 8%;
+      margin-top:10%;
+      color #fff;
+      background-color: #081848;
+      outline:none;
+      border:none;
+.clicked
+  background-color #115793
